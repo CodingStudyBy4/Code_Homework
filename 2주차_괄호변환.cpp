@@ -34,7 +34,7 @@ string solution(string p) {
 	if (is_good(p))
 		return p;
 
-	// ÀÏ´Ü ±ÕÇüÀâÈù u¸¦ »ı¼º
+	// ì¼ë‹¨ ê· í˜•ì¡íŒ uë¥¼ ìƒì„±
 	for (int i = 0; i < p.length(); i++) {
 		if (p[i] == '(')l++;
 		else r++;
@@ -44,26 +44,24 @@ string solution(string p) {
 	}
 	for (int i = 0; i < l + r; i++)
 		u += p[i];
-	//v»ı¼º
+	//vìƒì„±
 	for (int i = l + r; i < p.length(); i++)
 		v += p[i];
 
 	cout << u << ", " << v << endl;
 
-	//u°¡ ¿Ã¹Ù¸¥ ¹®ÀÚ¿­ÀÌ¸é v¿¡ ´ëÇØ¼­ recursive
+	//uê°€ ì˜¬ë°”ë¥¸ ë¬¸ìì—´ì´ë©´ vì— ëŒ€í•´ì„œ recursive
 	if (is_good(u))
 		answer = u + solution(v);
-	//¿Ã¹Ù¸¥ ¹®ÀÚ¿­ÀÌ ¾Æ´Ï¸é u¿¡ ´ëÇØ¼­ »õ·Î¿î ¹®ÀÚ¿­ »ı¼º.
+	//ì˜¬ë°”ë¥¸ ë¬¸ìì—´ì´ ì•„ë‹ˆë©´ uì— ëŒ€í•´ì„œ ìƒˆë¡œìš´ ë¬¸ìì—´ ìƒì„±.
 	else {
-		string tmp = "(";
+		string tmp = "(" + solution(v) + ")";
 		for (int i = 1; i < u.length() - 1; i++) {
 			if (u[i] == '(')
 				tmp += ")";
 			else tmp += "(";
 		}
-		tmp += ")";
-
-		answer = tmp + solution(v);
+		answer = tmp;
 	}
 	return answer;
 }
