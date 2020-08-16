@@ -221,7 +221,7 @@ int move_down(int** board, int** board_d, int N)
 int simulation(int** board, int N, int depth)
 {
 	depth++;
-	int **board_copy = new int*[N];
+	int **board_copy = new int*[N];// 있어야 할 이유
 	int **board_l = new int*[N];
 	int **board_r = new int*[N];
 	int **board_u = new int*[N];
