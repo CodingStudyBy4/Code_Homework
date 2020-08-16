@@ -5,3 +5,6 @@
 
 ## 2주차
 - H-index(programmers), 2048_easy(삼성 SW 역량 테스트 기출 문제)
+
+## 3주차
+- 구명보트(programmers), 뱀(삼성 SW 역량 테스트 기출 문제)
