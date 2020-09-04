@@ -1,6 +1,4 @@
 
-import queue
-
 def solution(lines):
     answer = 0
     time = [[int(i[11:13])*3600 + int(i[14:16])*60 + float(i[17:23]), float(i[24:-1]), n] for n,i in enumerate(lines)]
