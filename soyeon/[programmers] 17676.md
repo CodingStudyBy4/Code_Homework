@@ -2,10 +2,6 @@
 
 * 일단 문제를 제대로 읽어야 한다. `시작시간` + `걸리는 시간`이 아니라, `종료시간` + `걸리는 시간`임
 
-* 틀린 풀이: 86.4 / 100.0
-  * 밀리세컨드로 전처리 한 풀이
-  * 단순히 구간 +1000ms -1000ms를 할 때, 시간의 단위는 60진법인데 minutes와 hours로 올림 되는 경우를 신경 써주지 않아서 틀린 것 같다
-
 ```java
 import java.util.*;
 
@@ -28,7 +24,7 @@ class Solution {
 					serverNumStartAfter++;
 				}
 
-				if (isInBoundary(logs[j].startTime, logs[j].endTime, endTime, startTime + 999)) {
+				if (isInBoundary(logs[j].startTime, logs[j].endTime, endTime, endTime + 999)) {
 					serverNumEndAfter++;
 				}
 				if (isInBoundary(logs[j].startTime, logs[j].endTime, startTime - 999, startTime)) {
